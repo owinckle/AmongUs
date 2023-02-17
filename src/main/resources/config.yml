@@ -1,0 +1,13 @@
+############
+# Commands #
+############
+commands:
+  reload:
+    success: "&a[Among Us] Reload terminé."
+    description: "Reload la configuartion."
+    usage: "/au reload"
+  help:
+    description: "Affiche ce message."
+    usage: "/au help"
+    title: "&bListe des commandes Pixel Among Us:"
+    command: "&a%command% - %description%"

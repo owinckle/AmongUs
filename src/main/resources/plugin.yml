@@ -1,0 +1,8 @@
+name: AmongUs
+version: '${project.version}'
+main: me.yukinox.amongus.Plugin
+api-version: 1.19
+commands:
+  au:
+    description: "Commande Among Us de base."
+    usage: "/au - Commande Among Us de base."
