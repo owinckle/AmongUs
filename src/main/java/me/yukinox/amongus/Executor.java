@@ -1,7 +1,6 @@
 package me.yukinox.amongus;
 
-import commands.HelpCommand;
-import commands.ReloadCommand;
+import commands.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -22,19 +21,36 @@ public class Executor implements CommandExecutor {
 
         HelpCommand helpCommand = new HelpCommand(plugin);
         ReloadCommand reloadCommand = new ReloadCommand(plugin);
+        JoinCommand joinCommand = new JoinCommand(plugin);
+        BuildCommand buildCommand = new BuildCommand(plugin);
+        MapCommands mapCommands = new MapCommands(plugin);
+        MapsCommand mapsCommand = new MapsCommand(plugin);
 
         if (args.length == 0) {
             helpCommand.execute(player);
         } else if (args.length == 1) {
-            switch (args[0]) {
-                default:
-                case "help":
-                    helpCommand.execute(player);
-                    return true;
-                case "reload":
-                    reloadCommand.execute(player);
-                    return true;
+            if (args[0].equals("help")) {
+                helpCommand.execute(player);
+            } else if (args[0].equals("reload")) {
+                reloadCommand.execute(player);
+            } else if (args[0].equals("join")) {
+                joinCommand.execute(player);
+            } else if (args[0].equals("build")) {
+                buildCommand.execute(player);
+            } else if (args[0].equals("maps")) {
+                mapsCommand.execute(player);
+            } else {
+                helpCommand.execute(player);
+            }
+        } else if (args.length == 3) {
+            if (args[0].equals("map")) {
+                if (!player.hasPermission("au.admin") && !player.isOp()) return true;
 
+                if (args[1].equals("create")) {
+                    mapCommands.create(player, args[2]);
+                } else if (args[1].equals("delete")) {
+                    mapCommands.delete(player, args[2]);
+                }
             }
         }
 

@@ -4,10 +4,50 @@
 commands:
   reload:
     success: "&a[Among Us] Reload terminé."
-    description: "Reload la configuartion."
+    description: "Reload la configuration."
     usage: "/au reload"
   help:
     description: "Affiche ce message."
     usage: "/au help"
     title: "&bListe des commandes Pixel Among Us:"
     command: "&a%command% - %description%"
+    commandAdmin: "&c%command% - %description%"
+  build:
+    success: "&a[Among Us] Utilise cette baguette magique pour créer et modifier de nouvelles arènes."
+    description: "Reçoit la baguette magique."
+    usage: "/au build"
+  join:
+    description: "Ouvre le menu pour rejoindre une partie."
+    usage: "/au join"
+  maps:
+    description: "Affiche une liste des maps"
+    usage: "/au maps"
+  mapCreate:
+    success: "&a[Among Us] Nouvelle map &b%map% &acréée."
+    description: "Créer une map basé sur une sélection."
+    usage: "/au create <nom>"
+  mapDelete:
+    success: "&c[Among Us] Vous avez supprimé la map &b%map%&c."
+    description: "Supprime une map."
+    usage: "/au delete <nom>"
+
+#########
+# Menus #
+#########
+menus:
+  join:
+    title: "Rejoindre une partie"
+  maps:
+    title: "Liste des maps"
+
+############
+# Messages #
+############
+messages:
+  mapSettings:
+    minPlayers: "&dJoueurs minimum: &e%value%"
+    maxPlayers: "&dJoueurs maximum: &e%value%"
+    meetingDuration: "&dTemps de discussion: &e%value% secondes"
+    emergencyCooldown: "&dCooldown d'appel d'urgence: &e%value% secondes"
+    emergencyLimit: "&dNombre d'appel d'urgence maximum: &e%value%"
+    killCooldown: "&dCooldown de kills: &e%value% secondes"

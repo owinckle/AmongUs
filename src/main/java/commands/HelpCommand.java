@@ -17,14 +17,36 @@ public class HelpCommand {
 
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("commands.help.title")));
         if (player.isOp() || player.hasPermission("au.admin")) {
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.command")
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.commandAdmin")
                     .replace("%command%", config.getString("commands.reload.usage"))
-                    .replace("%description%", config.getString("commands.reload.description"))));
+                    .replace("%description%", config.getString("commands.reload.description")))
+            );
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.commandAdmin")
+                    .replace("%command%", config.getString("commands.build.usage"))
+                    .replace("%description%", config.getString("commands.build.description")))
+            );
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.commandAdmin")
+                    .replace("%command%", config.getString("commands.maps.usage"))
+                    .replace("%description%", config.getString("commands.maps.description")))
+            );
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.commandAdmin")
+                    .replace("%command%", config.getString("commands.mapCreate.usage"))
+                    .replace("%description%", config.getString("commands.mapCreate.description")))
+            );
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.commandAdmin")
+                    .replace("%command%", config.getString("commands.mapDelete.usage"))
+                    .replace("%description%", config.getString("commands.mapDelete.description")))
+            );
         }
 
         // Commands
         player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.command")
                 .replace("%command%", config.getString("commands.help.usage"))
-                .replace("%description%", config.getString("commands.help.description"))));
+                .replace("%description%", config.getString("commands.help.description")))
+        );
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&',config.getString("commands.help.command")
+                .replace("%command%", config.getString("commands.join.usage"))
+                .replace("%description%", config.getString("commands.join.description")))
+        );
     }
 }

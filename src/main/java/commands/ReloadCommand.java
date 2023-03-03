@@ -16,7 +16,7 @@ public class ReloadCommand {
         if (!player.hasPermission("au.admin") && !player.isOp()) return;
 
         FileConfiguration config = plugin.getConfig();
-        plugin.setPluginConfig(config);
+        plugin.initPluginConfig();
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', config.getString("commands.reload.success")));
     }
 }
