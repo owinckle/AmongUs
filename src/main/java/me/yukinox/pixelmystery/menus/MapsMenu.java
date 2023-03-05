@@ -2,11 +2,16 @@ package me.yukinox.pixelmystery.menus;
 
 import me.yukinox.pixelmystery.managers.ItemManager;
 import me.yukinox.pixelmystery.Plugin;
+import me.yukinox.pixelmystery.managers.MapManager;
 import me.yukinox.pixelmystery.objects.Map;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 public class MapsMenu {
 
@@ -32,5 +37,23 @@ public class MapsMenu {
         }
 
         player.openInventory(menu);
+    }
+
+    public void handler(InventoryClickEvent e) {
+        e.setCancelled(true);
+
+        Player player = (Player) e.getWhoClicked();
+        ItemStack clickedItem = e.getCurrentItem();
+
+        if (clickedItem.getType() != Material.PAPER) return;
+
+        String itemName = ChatColor.stripColor(clickedItem.getItemMeta().getDisplayName());
+        MapManager mapManager = plugin.getMapManager();
+        Map map = mapManager.getMap(itemName);
+
+        if (map == null) return;
+
+        MapMenu mapMenu = new MapMenu(plugin);
+        mapMenu.open(player);
     }
 }

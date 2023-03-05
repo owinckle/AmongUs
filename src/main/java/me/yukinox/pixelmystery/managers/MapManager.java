@@ -174,7 +174,27 @@ public class MapManager {
             );
             i++;
         }
-
         return maps;
+    }
+
+    public Map getMap(String name) {
+        Set<String> mapNames = config.getKeys(false);
+
+        if (mapNames.contains(name)) {
+            for (String mapName : mapNames) {
+                if (name.equals(mapName)) {
+                    ConfigurationSection mapSettings = config.getConfigurationSection(mapName + ".settings");
+                    return new Map(mapName,
+                            mapSettings.getInt("minPlayers"),
+                            mapSettings.getInt("maxPlayers"),
+                            mapSettings.getInt("meetingDuration"),
+                            mapSettings.getInt("emergencyCooldown"),
+                            mapSettings.getInt("emergencyLimit"),
+                            mapSettings.getInt("killCooldown")
+                    );
+                }
+            }
+        }
+        return null;
     }
 }

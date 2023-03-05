@@ -39,6 +39,8 @@ menus:
     title: "Rejoindre une partie"
   maps:
     title: "Liste des maps"
+  map:
+    title: "Configuration de map"
 
 ############
 # Messages #
