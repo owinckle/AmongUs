@@ -1,9 +1,9 @@
-package me.yukinox.amongus;
+package me.yukinox.pixelmystery;
 
-import listeners.MenuListener;
-import listeners.WandListener;
-import managers.ItemManager;
-import managers.MapManager;
+import me.yukinox.pixelmystery.listeners.MenuListener;
+import me.yukinox.pixelmystery.listeners.WandListener;
+import me.yukinox.pixelmystery.managers.ItemManager;
+import me.yukinox.pixelmystery.managers.MapManager;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,7 +19,7 @@ public final class Plugin extends JavaPlugin {
         itemManager = new ItemManager(this);
 
         // Main command
-        getCommand("au").setExecutor(new Executor(this));
+        getCommand("mystery").setExecutor(new Executor(this));
 
         // Listeners
         getServer().getPluginManager().registerEvents(new MenuListener(this), this);

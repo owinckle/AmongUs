@@ -1,8 +1,8 @@
-name: AmongUs
+name: PixelMystery
 version: '${project.version}'
-main: me.yukinox.amongus.Plugin
-api-version: 1.19
+main: me.yukinox.pixelmystery.Plugin
+api-version: 1.8
 commands:
-  au:
-    description: "Commande Among Us de base."
-    usage: "/au - Commande Among Us de base."
+  mystery:
+    description: "Commande Pixel Mystery de base."
+    usage: "/mystery - Commande Pixel Mystery de base."

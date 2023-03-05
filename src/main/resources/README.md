@@ -1,11 +1,11 @@
-# Pixel Among Us
+# Pixel Mystery
 
 ## Commands
 
-- /au join
-- /au build
-- /au create
+- /mystery join
+- /mystery build
+- /mystery create
 
 ## Permissions
 
-- au.admin
+- pixelmystery.admin
